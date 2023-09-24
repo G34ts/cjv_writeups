@@ -19,7 +19,6 @@ Players receive a text file with seeming random numbers. They need to take clues
 ```Opening File``` <br/>
 ```./[file]``` <br/>
 ![image](https://github.com/G34ts/cjv_writeups/assets/126637263/174d578c-ce60-4672-a9b2-ac0280eb12eb) <br/> <br/>
-
 We can see, that in the ```qr.code.txt``` file, there are 29 lines of text, each of which contains a set of numbers that are randomized in order along with the amount. From what we know, the creator of the challenge mentions that these numbers are a **QR Code**. <br/> <br/>
 
 3. Then for the third step, we can analyze how we can turn this set of numbers into a QR Code that can be scanned. The first thing I did was look at the title of this challenge. That is 1black0white. <br/> <br/>
