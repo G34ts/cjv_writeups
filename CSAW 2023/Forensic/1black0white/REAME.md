@@ -24,4 +24,14 @@ We can see, that in the ```qr.code.txt``` file, there are 29 lines of text, each
 3. Then for the third step, we can analyze how we can turn this set of numbers into a QR Code that can be scanned. The first thing I did was look at the title of this challenge. That is 1black0white. <br/> <br/>
 If we associate that title with QR Codes is. The most dominant colors on an average QR Code are black and white. That was the first thing I thought of. Next is the number 1 in black and 0 in white. What we can associate for these 2 numbers for me are binary numbers. This made me have an idea, which is what if we convert each of these 29 numbers into binary numbers first, then use an online tool/python code to convert the binary numbers into an image. Which if the system detects there is a number 1, it will produce 1 black pixel, and vice versa. If the system detects a 0, it will produce 1 white pixel.
 
-4. Then the fourth step I did was to convert all the numbers contained in qr.code.txt into binary numbers using python. Then I put it in notes for validation at the end. <br/>
+4. Then the fourth step I did was to convert all the numbers contained in qr.code.txt into binary numbers using python. Then I put it in notes for validation at the end. <br/> <br/>
+```Dec-to-Binary.py``` <br/>
+```py
+h = open("qr_code.txt", "r")
+
+h = h.read()
+
+for i in h.split():
+    binn = bin(int(i))[2:].zfill(29)
+    print(binn)
+```
