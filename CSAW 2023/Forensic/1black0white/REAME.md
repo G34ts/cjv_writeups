@@ -13,7 +13,6 @@ Players receive a text file with seeming random numbers. They need to take clues
 ![image (1)](https://github.com/G34ts/cjv_writeups/assets/126637263/5e389f94-6cee-44da-979b-a15dd320ea27) <br/> <br/>
 ```Directory Changes``` <br/>
 ![image](https://github.com/G34ts/cjv_writeups/assets/126637263/e440ef54-1302-4834-a2e0-dbc833da50fd) <br/>
-<br/>
 
 2. The second step I did was to try to open the downloaded file, and see what it contained. <br/> <br/>
 ```Opening File``` <br/>
@@ -35,3 +34,24 @@ for i in h.split():
     binn = bin(int(i))[2:].zfill(29)
     print(binn)
 ```
+After the python code is run, it will produce output as in ```qr.code.binary.txt``` <br/> <br/> 
+5. After we get the result for the binary number we need. the fifth step is to convert the binary number into an image. That is by turning the number 1 into a black pixel, and the number 0 into a white pixel. <br/> <br/>
+```Solve.py``` <br/>
+```py
+h = open("qr_code.txt", "r")
+
+h = h.read()
+
+size = 0
+for i in h.split():
+    binn = bin(int(i))[2:]
+    size = max(len(binn), size)
+
+for i in h.split():
+    binn = bin(int(i))[2:].zfill(29)
+    for i in binn:
+        print(chr(9608) if i == "1" else " ", end="")
+    print()
+```
+After running the python code. then we will get the results in the form of an image resembling a QR Code <br/>
+
